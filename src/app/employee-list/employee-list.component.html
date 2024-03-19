@@ -1,7 +1,6 @@
 <h2>Employee List</h2>
 
-<ul> 
-    <li *ngFor="let employee of employees">
-     {{ employee.name }} - {{ employee.position }} 
-     </li> 
-</ul> 
+<div *ngFor="let employee of employees" (click)="viewEmployeeDetail(employee)">
+  <img [src]="employee.Picture" alt="{{ employee.FirstName }} {{ employee.LastName }}" width="50" height="50">
+  <p>{{ employee.EmployeeNumber }} - {{ employee.LastName }}, {{ employee.FirstName }}</p>
+</div>

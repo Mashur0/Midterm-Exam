@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
+import { Employee } from '../employee.model';
 
 @Component({
   selector: 'app-employee-add',
@@ -6,9 +8,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./employee-add.component.css']
 })
 export class EmployeeAddComponent {
-  newEmployee: any = {}; 
+  newEmployee: Employee = {
+    EmployeeID: null,
+    EmployeeNumber: '',
+    FirstName: '',
+    LastName: '',
+    Birthday: '',
+    Gender: '',
+    Picture: ''
+  };
 
-  onSubmit() {
+  constructor(private router: Router) { }
+
+  onSubmit(): void {
+    // Implement validation and add logic
     console.log('New employee:', this.newEmployee);
+    // After adding, navigate back to employee list
+    this.router.navigate(['/employees']);
   }
 }

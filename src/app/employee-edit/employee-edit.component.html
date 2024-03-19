@@ -1,11 +1,39 @@
 <h2>Edit Employee</h2>
 
-<form (submit)="onSubmit()">
-  <label for="name">Name:</label>
-  <input type="text" id="name" name="name" [(ngModel)]="editedEmployee.name" required>
-  
-  <label for="position">Position:</label>
-  <input type="text" id="position" name="position" [(ngModel)]="editedEmployee.position" required>
-  
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="employeeNumber">Employee Number:</label>
+    <input type="text" id="employeeNumber" name="employeeNumber" [(ngModel)]="editedEmployee.EmployeeNumber" required>
+  </div>
+
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="editedEmployee.FirstName" required>
+  </div>
+
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="editedEmployee.LastName" required>
+  </div>
+
+  <div>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday" [(ngModel)]="editedEmployee.Birthday" required>
+  </div>
+
+  <div>
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" [(ngModel)]="editedEmployee.Gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="picture">Picture (URL):</label>
+    <input type="text" id="picture" name="picture" [(ngModel)]="editedEmployee.Picture" required>
+  </div>
+
   <button type="submit">Save Changes</button>
 </form>

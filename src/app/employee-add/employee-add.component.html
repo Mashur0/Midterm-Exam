@@ -1,20 +1,39 @@
 <h2>Add Employee</h2>
 
-<form (submit)="onSubmit()">
-  <label for="name">Employee ID:</label>
-  <input type="text" id="name" name="name" [(ngModel)]="newEmployee.EmpID" required>
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="employeeNumber">Employee Number:</label>
+    <input type="text" id="employeeNumber" name="employeeNumber" [(ngModel)]="newEmployee.EmployeeNumber" required>
+  </div>
 
-  <label for="name">Employee Number:</label>
-  <input type="text" id="name" name="name" [(ngModel)]="newEmployee.EmpNum" required>
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" id="firstName" name="firstName" [(ngModel)]="newEmployee.FirstName" required>
+  </div>
 
-  <label for="name">First Name:</label>
-  <input type="text" id="name" name="name" [(ngModel)]="newEmployee.Fname" required>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" id="lastName" name="lastName" [(ngModel)]="newEmployee.LastName" required>
+  </div>
 
-  <label for="name">Last Name:</label>
-  <input type="text" id="name" name="name" [(ngModel)]="newEmployee.Lname" required>
-  
-  <label for="position">Position:</label>
-  <input type="text" id="position" name="position" [(ngModel)]="newEmployee.position" required>
-  
+  <div>
+    <label for="birthday">Birthday:</label>
+    <input type="date" id="birthday" name="birthday" [(ngModel)]="newEmployee.Birthday" required>
+  </div>
+
+  <div>
+    <label for="gender">Gender:</label>
+    <select id="gender" name="gender" [(ngModel)]="newEmployee.Gender" required>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+      <option value="Other">Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="picture">Picture (URL):</label>
+    <input type="text" id="picture" name="picture" [(ngModel)]="newEmployee.Picture" required>
+  </div>
+
   <button type="submit">Add Employee</button>
 </form>
